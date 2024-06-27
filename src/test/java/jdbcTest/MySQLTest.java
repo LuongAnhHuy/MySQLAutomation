@@ -8,8 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MySQLTest {
+    static Connection conn;
     public static void main(String[] args) throws SQLException {
-        Connection conn = MySQLConnection.getMySQLConnection();
+        conn = MySQLConnection.getMySQLConnection();
 
         System.out.println("Opened connection: " + conn);
 
@@ -23,15 +24,13 @@ public class MySQLTest {
             int empld = rs.getInt(1);
             String empFirstName = rs.getString(2);
             String empLastName = rs.getString("Last_Name");
-            //int deptID = rs.getInt("Dept_Id");
+            int deptID = rs.getInt("Dept_Id");
 
             System.out.println("===============");
             System.out.println("Emp Id: " + empld);
             System.out.println("Emp Firstname: " + empFirstName);
             System.out.println("Emp Lastname: " + empLastName);
-            //System.out.println("Department ID: " + deptID);
-
-
+            System.out.println("Department ID: " + deptID);
         }
         conn.close();
         System.out.println("======= Closed connection =========");
