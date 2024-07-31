@@ -17,10 +17,10 @@ public class SQL_JDTS_Test {
         System.out.println("Opened connection: " + conn);
 
         Statement statement = conn.createStatement();
-        // Insert data tp table Branch
+        // Insert data to table Branch
         String insertValue = """
                 INSERT INTO [dbo].[BRANCH] ([ADDRESS],[CITY],[NAME],[STATE],[ZIP_CODE]) 
-                VALUES ('25 Le Loi','Da Nang','Honda','DN','55000')
+                VALUES ('270 Doi Can','Ha Noi','Huy','NEW','10000')
                 """;
         int rowCount = statement.executeUpdate(insertValue);
         System.out.println("Row Count" + rowCount);
